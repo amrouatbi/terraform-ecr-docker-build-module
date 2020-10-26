@@ -9,6 +9,16 @@ variable "docker_image_tag" {
   default     = "latest"
 }
 
+variable "aws_access_key_id" {
+  type        = string
+  description = "Access key used to authenticate"
+}
+
+variable "aws_secret_access_key" {
+  type        = string
+  description = "Secret key used to authenticate"
+}
+
 variable "aws_region" {
   type        = string
   description = "AWS region for ECR"

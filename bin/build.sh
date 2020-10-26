@@ -23,7 +23,15 @@ which aws > /dev/null || { echo 'ERROR: aws-cli is not installed' ; exit 1; }
 which docker > /dev/null && docker ps > /dev/null || { echo 'ERROR: docker is not running' ; exit 1; }
 
 # Connect into aws
-aws ecr get-login-password $aws_extra_flags | docker login --username AWS --password-stdin $aws_ecr_repository_url_with_tag
+docker run \
+    -e AWS_ACCESS_KEY_ID \
+    -e AWS_SECRET_ACCESS_KEY \
+    -e AWS_DEFAULT_REGION \
+    amazon/aws-cli \
+    ecr get-login-password \
+    | docker login \
+    --username AWS \
+    --password-stdin $aws_ecr_repository_url_with_tag
 
 # Some Useful Debug
 echo "Building $aws_ecr_repository_url_with_tag from $build_folder/Dockerfile"
