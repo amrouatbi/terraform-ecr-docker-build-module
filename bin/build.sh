@@ -10,6 +10,8 @@ aws_ecr_repository_url_with_tag=$2
 # Check that docker is installed and running
 which docker > /dev/null && docker ps > /dev/null || { echo 'ERROR: docker is not running' ; exit 1; }
 
+docker pull amazon/aws-cli:2.0.62
+
 # Connect into aws
 docker run \
     -e AWS_ACCESS_KEY_ID \
