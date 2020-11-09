@@ -12,6 +12,8 @@ which docker > /dev/null && docker ps > /dev/null || { echo 'ERROR: docker is no
 
 docker pull amazon/aws-cli:2.0.62
 
+echo "Test"
+
 # Connect into aws
 docker run \
     -e AWS_ACCESS_KEY_ID \
