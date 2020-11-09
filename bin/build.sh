@@ -15,7 +15,7 @@ docker run \
     -e AWS_ACCESS_KEY_ID \
     -e AWS_SECRET_ACCESS_KEY \
     -e AWS_DEFAULT_REGION \
-    amazon/aws-cli \
+    amazon/aws-cli:2.0.62 \
     ecr get-login-password \
     | docker login \
     --username AWS \
