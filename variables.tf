@@ -9,8 +9,8 @@ variable "docker_image_tag" {
   default     = "latest"
 }
 
-variable "build_arg" {
-  type        = list(string)
+variable "build_args" {
+  type        = map(string)
   description = "An optional, by default empty list of args to pass to docker build if need be"
   default     = []
 
