@@ -9,6 +9,11 @@ variable "docker_image_tag" {
   default     = "latest"
 }
 
+variable "build_arg" {
+  type        = list(string)
+  description = "An optional, by default empty list of args to pass to docker build if need be"
+  default     = []
+
 variable "aws_access_key_id" {
   type        = string
   description = "Access key used to authenticate"
