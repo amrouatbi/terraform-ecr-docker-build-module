@@ -27,6 +27,7 @@ docker run \
 echo "Building $aws_ecr_repository_url_with_tag from $build_folder/Dockerfile"
 
 # Build image
+echo "Running command: docker build -t $aws_ecr_repository_url_with_tag $additional_args $build_folder"
 docker build -t $aws_ecr_repository_url_with_tag $additional_args $build_folder
 
 # Push image
