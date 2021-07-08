@@ -26,11 +26,8 @@ docker run \
 # Some Useful Debug
 echo "Building $aws_ecr_repository_url_with_tag from $build_folder/Dockerfile"
 
-# Workaround to build in parent context and so we can include utils
-cd $build_folder
-
 # Build image
-docker build -t $aws_ecr_repository_url_with_tag --build-arg=$build_arg $build_folder
+docker build -t $aws_ecr_repository_url_with_tag $build_arg $build_folder
 
 # Push image
 docker push $aws_ecr_repository_url_with_tag
