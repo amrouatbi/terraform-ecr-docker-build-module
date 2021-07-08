@@ -30,7 +30,7 @@ echo "Building $aws_ecr_repository_url_with_tag from $build_folder/Dockerfile"
 cd $build_folder
 
 # Build image
-docker build -t $aws_ecr_repository_url_with_tag --build-arg=$3 $build_folder
+docker build -t $aws_ecr_repository_url_with_tag --build-arg=$build_arg $build_folder
 
 # Push image
 docker push $aws_ecr_repository_url_with_tag
