@@ -13,6 +13,7 @@ variable "additional_args" {
   type        = string
   description = "Additional arguments to pass to docker build, must be already formatted for shell."
   default     = ""
+}
 
 variable "aws_access_key_id" {
   type        = string
